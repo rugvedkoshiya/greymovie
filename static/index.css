@@ -1,0 +1,114 @@
+body {
+    color: #fff;
+    background-color: #000;
+}
+
+.movie-card {
+    display: inline-block;
+    max-width: 200px;
+    min-width: 200px;
+    height: 400px;
+    margin: 10px;
+    background-color: #1A1A1A;
+}
+
+.moviePost-full {
+    text-decoration: none;
+    color: #fff;
+}
+
+.moviePost-full:hover {
+    color: #fff;
+}
+
+.movie-post-image:hover {
+    background-color:#000;
+    opacity:0.7;
+    border-radius:30px;
+
+}
+
+.movie-card-content {
+    height: 130px;
+    position: relative;
+    padding: 5px;
+}
+
+.movie-card-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.card-img-top {
+    width: 200px;
+    height: 270px;
+}
+
+.imdb-rating-star {
+    color: #E9C265;
+    padding-bottom: 5px;
+}
+
+.movie-card-header-trailer-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 0.5em;
+    transition: width 0.5s, background-color 0.5s;
+}
+
+.movie-card-header-trailer {
+    color: #fff;
+
+}
+
+.movie-card-header-trailer-btn:hover {
+    width: 80px;
+    background-color: #3C3C3C;
+}
+
+.movie-card-title {
+    padding-top: 5px;
+    /* height: 2em; */
+    max-height: 30px;
+}
+
+.movie-card-title-text {
+    font-size: 18px;
+}
+
+.movie-card-stream {
+    position: absolute;
+    display: block;
+    top: 73%;
+    right: 5%;
+    padding-top: 0.25em;
+    width: 70px;
+    height: 32px;
+}
+
+
+/* #2C2C2C */
+.streaming-partner-icon {
+    float: right;
+    max-height: 23px;
+}
+
+.streaming-partner-icon::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.youtube-icon {
+    width: 20%;
+}
+
+.anchore-remove {
+    text-decoration: none;
+    color: #fff;
+}

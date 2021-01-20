@@ -1,0 +1,141 @@
+/* .movie-card {
+    max-width: 200px;
+    min-width: 200px;
+    height: 400px;
+    margin: 10px;
+    background-color: #1A1A1A;
+}
+
+.movie-image {
+    max-width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    height: 300px;
+}
+
+.movie-container {
+    max-width: 400px;
+} */
+
+body {
+    color: #fff;
+}
+
+.movie-container {
+    margin: 10px auto ;
+    max-width: 70%;
+    background-color: #1A1A1A;
+}
+
+.movie-image {
+    float: left;
+    /* max-width: 25%; */
+    height: 30%;
+
+}
+
+.movie-card-img-top {
+    padding: 10px;
+    height: 21em;
+}
+
+.movie-detail {
+    padding: 10px;
+    float: right;
+    position: relative;
+    width: 75%;
+    color: #fff;
+}
+
+.movie-card::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.movie-title {
+    display: inline-block;
+    height: 80px;
+    font-size: 28px;
+    left: 0;
+}
+
+.movie-year {
+    font-size: 22px;
+}
+
+hr {
+    margin: 5px;
+}
+
+.movie-description {
+    display: inline-block;
+    height: 120px;
+}
+
+.imdb-rating-star {
+    color: #E9C265;
+    padding-bottom: 5px;
+}
+
+.movie-container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.hr-divider {
+    width: 100%;
+}
+
+.movie-trailer-others {
+    margin: 10px;
+}
+
+.movie-more-details {
+    width: 48%;
+    height: 320px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.movie-trailer {
+    width: 48%;
+    height: 320px;
+    display: inline-block;
+    vertical-align: top;
+    /* float: right; */
+}
+
+.hr-vertical {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.movie-more-detail-audio {
+    display: inline-block;
+    margin-bottom: 2em;
+}
+
+.available-on {
+    display: block;
+    /* width: 70px; */
+}
+
+.primevideo-icon {
+    /* float: right; */
+    margin: 10px 0;
+    max-width: 6em;
+}
+
+.movie-more-detail-available {
+    display: inline-block;
+    font-size: 20px;
+    border-bottom: 1px solid grey;
+    margin-bottom: 1em;
+}
+
+.available-link {
+    display: inline-block;
+    margin-bottom: 1em;
+}

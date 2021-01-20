@@ -1,0 +1,57 @@
+{% extends 'base_template.html' %}
+{% load static %}
+
+{% block style %}{% static 'moviePage.css' %}{% endblock %}
+
+{% block title %}
+{{movie_id.movie_title}}
+{% endblock %}
+
+
+{% block body %}
+<div class="movie-container">
+  <div class="movie-card">
+    <div class="movie-image">
+      <img src="{{movie_id.movie_images.url}}" class="movie-card-img-top" alt="{{movie_id.movie_title}]">
+    </div>
+    <div class="movie-detail">
+      <span class="movie-title">{{movie_id.movie_title}} <span class="movie-year">({{movie_id.movie_date|date:'Y'}})</span></span>
+      <hr>
+      <span class="movie-length-genre-date"><img src="{% static 'image/imdb_star_17x17.png' %}" class="imdb-rating-star" alt="...">
+        {{movie_id.movie_imdb_plugin}} &nbsp; | &nbsp; {{movie_id.movie_video_length}} min &nbsp; | &nbsp; {{movie_id.movie_date|date:'d M Y'}} &nbsp; | &nbsp; {{movie_id.movie_genres}} </span>
+      <hr>
+      <span class="movie-description">{{movie_id.movie_description}}</span>
+      <hr>
+      <span>Director : {{movie_id.movie_director}}</span><br>
+      <span>Actors : {{movie_id.movie_actors}}</span>
+    </div>
+    <hr class="hr-divider">
+  </div>
+  <div class="movie-trailer-others">
+    <div class="movie-more-details">
+      <span class="movie-more-detail-audio">Audio : {{movie_id.movie_audio}}</span>
+      <div>
+        <span class="movie-more-detail-available">Available on</span>
+        <div class="available-on">
+          <a class="available-link" href="{{movie_id.movie_streaming_link}}" target="_blank">
+            <img src="{% static 'image/'|add:movie_id.movie_streaming_partner|add:'.png' %}" class="primevideo-icon" alt="{{movie_id.movie_streaming_partner}}">
+          </a>
+        </div>
+        {% if movie_id.movie_available_youtube != None %}
+        <div>
+          <a href="{{movie_id.movie_available_youtube}}" target="_blank">
+            <img src="{% static 'image/youtubebig.png' %}" class="primevideo-icon" alt="{{movie_id.movie_streaming_partner}}">
+          </a>
+        </div>
+        {% endif %}
+      </div>
+
+    </div>
+    <!-- <div class="hr-vertical"></div> -->
+    <hr width="1" size="320" class="hr-vertical">
+    <div class="movie-trailer">
+      <iframe width="520" height="320" src="https://www.youtube-nocookie.com/embed/{{movie_id.movie_trailer}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base_template.html' %}
+{% load static %}
+
+{% block style %}{% static 'index.css' %}{% endblock %}
+
+{% block title %}
+HomePage
+{% endblock %}
+
+
+{% block body %}
+<!-- {{ movies.count }} movie{{ movies.count|pluralize }} -->
+<div class="movie-card-group">
+  {% for movie in movies %}
+  <div class="movie-card">
+    <div class="movie-post-image">
+      <a href="{% url 'moviePage' movie.id %}" class="moviePost-full">
+        <img src="{{movie.movie_images.url}}" class="card-img-top" alt="...">
+      </a>
+    </div>
+    <div class="movie-card-content">
+      <div class="movie-card-header">
+        <span class="movie-card-header-ratings">
+          <img src="{% static 'image/imdb_star_17x17.png' %}" class="imdb-rating-star" alt="IMDB">
+          {{movie.movie_imdb_plugin}}
+        </span>
+        <a href="https://www.youtube.com/watch?v={{movie.movie_trailer}}" class="anchore-remove" target="_blank">
+          <button class="movie-card-header-trailer-btn">
+            <span class="movie-card-header-trailer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="ipc-icon ipc-icon--play-arrow ipc-button__icon ipc-button__icon--pre" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z"></path></svg>
+            </span>
+          </button>
+        </a>
+        <span class="movie-card-header-year">
+          {{movie.movie_date|date:'Y'}}
+        </span>
+      </div>
+      <a href="{% url 'moviePage' movie.id %}" class="moviePost-full">
+      <div class="movie-card-title">
+        <span class="movie-card-title-text">{{movie.movie_title}}</span>
+      </div>
+      </a>
+      {% if movie.movie_streaming_partner != None %}
+      <div class="movie-card-stream">
+        <a href="{{movie.movie_streaming_link}}" target="_blank">
+          <img src="{% static 'image/'|add:movie.movie_streaming_partner|add:'.png' %}" class="streaming-partner-icon" alt="{{movie.movie_streaming_partner}}">
+        </a>
+      </div>
+      {% endif %}
+      <!-- <small class="text-muted">{{movie.movie_date|date:'d M Y'}}</small> -->
+      <!-- {{movie.movie_imdb_plugin|safe|escape}} -->
+      <!-- <a href="{% url 'moviePage' movie.id %}" class="readfull-btn"><span>Read Full</span></a> -->
+      <!-- <p class="movie-card-text">{{movie.movie_description|truncatechars:100}}</p> -->
+    </div>
+    
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
