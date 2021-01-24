@@ -11,6 +11,7 @@
 {% block body %}
 <div class="movie-container">
   <div class="movie-card">
+
     <div class="movie-image">
       <img src="{{movie_id.movie_images.url}}" class="movie-card-img-top" alt="{{movie_id.movie_title}]">
     </div>
@@ -27,6 +28,7 @@
     </div>
     <hr class="hr-divider">
   </div>
+
   <div class="movie-trailer-others">
     <div class="movie-more-details">
       <span class="movie-more-detail-audio">Audio : {{movie_id.movie_audio}}</span>
@@ -45,8 +47,8 @@
         </div>
         {% endif %}
       </div>
-
     </div>
+    
     <!-- <div class="hr-vertical"></div> -->
     <hr width="1" size="320" class="hr-vertical">
     <div class="movie-trailer">

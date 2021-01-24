@@ -1,4 +1,4 @@
-body {
+/* body {
     color: #fff;
     background-color: #000;
 }
@@ -73,7 +73,6 @@ body {
 
 .movie-card-title {
     padding-top: 5px;
-    /* height: 2em; */
     max-height: 30px;
 }
 
@@ -92,7 +91,6 @@ body {
 }
 
 
-/* #2C2C2C */
 .streaming-partner-icon {
     float: right;
     max-height: 23px;
@@ -111,4 +109,116 @@ body {
 .anchore-remove {
     text-decoration: none;
     color: #fff;
+} */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    background-color: #000;
+}
+
+.movie-card-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.movie-card {
+    height: 400px;
+    width: 200px;
+    margin: 10px;
+    background-color: #1A1A1A;
+    position: relative;
+}
+
+.card-img-top{
+    height: 270px;
+    width: 100%;
+    padding: 0;
+}
+
+.movie-post-image:hover {
+    background-color:#000;
+    opacity:0.7;
+    border-radius:30px;
+
+}
+
+.movie-card-header{
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.movie-card-header-trailer-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 0.5em;
+    transition: width 0.5s, background-color 0.5s;
+}
+
+.movie-card-header-trailer {
+    color: #fff;
+}
+
+.anchore-remove:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.anchore-remove {
+    text-decoration: none;
+    color: #fff;
+}
+
+.movie-card-header-trailer-btn:hover {
+    width: 80px;
+    background-color: #3C3C3C;
+}
+
+.movie-card-title {
+    padding: 0 10px;
+}
+
+.movie-card-text-anchore {
+    text-decoration: none;
+    color: #fff;
+}
+
+.movie-card-text-anchore:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.movie-card-stream {
+    position: absolute;
+    display: block;
+    top: 92%;
+    right: 5%;
+    padding-top: 0.25em;
+    width: 70px;
+    height: 32px;
+}
+
+.streaming-partner-icon {
+    float: right;
+    max-height: 23px;
+}
+
+.streaming-partner-icon::after {
+    content: "";
+    display: block;
+    clear: both;
 }
